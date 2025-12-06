@@ -5,7 +5,7 @@ const shopify = shopifyApi({
     apiKey: process.env.SHOPIFY_API_KEY || 'test_key',
     apiSecretKey: process.env.SHOPIFY_API_SECRET || 'test_secret',
     scopes: ['read_products', 'read_customers', 'read_orders'],
-    hostName: 'localhost:4000',
+    hostName: process.env.SHOPIFY_APP_HOST || `localhost:${process.env.PORT || 4000}`,
     apiVersion: '2024-04',
     isEmbeddedApp: false,
 });
