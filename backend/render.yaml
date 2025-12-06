@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: shopify-insights-api
+    env: node
+    plan: free
+    buildCommand: npm install && npx prisma migrate deploy
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
